@@ -8,7 +8,35 @@
   <title>Coding Quiz</title>
 </head>
 <body>
-  
+  <main>
+    <section>
+      <section class="card question-box quiz-questions">
+      </section>
+      <section class="answer-section">
+        <div class="answer-box" id="a"></div>
+        <div class="answer-box" id="b"></div>
+        <div class="answer-box" id="c"></div>
+        <div class="answer-box" id="d"></div>
+      </section>
+    </section>
+
+    <section>
+      <div class="card results">
+        <div class="highScore">
+          <button class="btn" id="high-score-button">High Score</button>
+        </div>
+        <div class = "win-loss-container">
+          <div>
+          <h2>Correct: <span class="win">0 </span> </h2>
+          <h2>Incorrect: <span class="lose">0</span></h2>
+          </div>
+        <button class="reset-button">Restart Quiz</button>
+        </div>
+        <div class="ansConfirmation"></div>
+      </div>
+
+    </section>
+  </main>  
 
 <script src="./assets/js/script.js"></script>  
 </body>
