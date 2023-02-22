@@ -10,6 +10,21 @@ body {
   min-height: 100vh;
   justify-content: flex-start;
 }
+
+button {
+  background: rgb(192, 0, 192);
+  border-radius: 8px;
+  color: #13293d;
+  cursor: pointer;
+  font-size: 2em;
+  line-height: 12px;
+  padding: 20px;
+  text-align: center;
+  transition-duration: 0.15s;
+  transition-property: background-color;
+  transition-timing-function: linear;
+  margin-top: 0.6em;
+}
 .card {
   background: green;
   border: 1px solid #eceff1;
@@ -19,3 +34,136 @@ body {
   margin: auto;
   padding: 20px;
 }
+
+header {
+  padding: 40px;
+  text-align: center;
+  background: green;
+  color: #fff;
+  border-bottom:30px #879274;
+}
+.large-font {
+  font-size: 3.5em;
+  text-align:center;
+}
+
+.timer {
+  height: 50px;
+  padding: 0;
+  background: #13293d;
+  color: #fff;
+  text-align: center;
+}
+
+.timer-text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  font-size: 2em;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+section {
+  flex: 0 auto;
+  padding: 0px;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.win-loss-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.highScore {
+  display: inline-block;
+  font-size: 12px;
+  height: 30px;
+  line-height: 8px;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.reset-button {
+  font-size: 16px;
+  height: 30px;
+  line-height: 8px;
+  margin-top: 20px;
+}
+
+.question-box {
+  width: 55vw;
+  height: 400px;
+}
+
+.quiz-questions {
+  display: flex;
+  flex-wrap: wrap;
+  width: 51.5vw;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+}
+.answer-section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 51.5vw;
+  height: 45px;
+  padding: 0;
+  margin: 0;
+}
+
+.answer-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 51.5vw;
+  height: 45px;
+  padding: 0;
+  margin: 0;
+}
+
+.results {
+  width: 30vw;
+  height: 400px;
+}
+
+@media screen and (max-width: 1183px) {
+  main {
+    flex-direction: column;
+  }
+
+  .quiz-box,
+  .results {
+    width: 90vw;
+  }
+
+
+  section {
+    background-color: white;
+    margin: 5px;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 504px) {
+  .large-font {
+    font-size: 2em;
+  }
+
+  .reset-button {
+    font-size: 12px;
+    width: 20ox;
+    
+  }
+
+  .timer {
+    height: 100px;
+  }}
