@@ -35,6 +35,7 @@ let initialsInput = document.createElement("input");
 let submit = document.createElement("input");
 const h1 = document.querySelector('h1');
 
+startButton.addEventListener("click", startGame);
 
 // An array of object questions and answers for the quiz. 
 let questions = [{
@@ -159,5 +160,59 @@ initialsInput.type = "text";
 initialsInput.placeholder = "Please enter your initials here!";
 initialsInput.setAttribute('id', 'initials-input');
 
+function inputQuestions() {
+  answerBox[0].style.display = 'block';
+  answerBox[1].style.display = 'block';
+  answerBox[2].style.display = 'block';
+  answerBox[3].style.display = 'block';
+  let q = questions[currentQuestion];
+  for (let i = 0; i < questions.length; i++) {
+    
+    answerSection.style.height = '250px';
+    questionBox.innerHTML = q.question;
+    answerA.textContent = q.a;
+    answerB.textContent = q.b;
+    answerC.textContent = q.c;
+    answerD.textContent = q.d;
+  }
+};
+
+function timer() {
+  timeLeft = 100;
+  timeInterval = setInterval(function () {
+    if (timeLeft > 1){
+      timerEl.textContent = timeLeft + ' seconds left';
+    } else {
+      timerEl.textContent = timeLeft + ' second left';
+    }
+    timeLeft--;
+    
+    if (timeLeft <= 0){
+      clearInterval(timeInterval);
+      timerEl.textContent = '';
+      if (score > 1){
+      questionBox.innerHTML = "<h1> Time's up. You scored " + score + "points! </h1>";
+      }else {
+        questionBox.innerHTML = "<h1> Time's up. You scored " + score + "point. </h1>";
+      }
+      questionBox.appendChild(inputForm);
+      inputForm.appendChild(initialsInput);
+      inputForm.appendChild(submit);
+      for (let i = 0; i < answerBox.length; i++) {
+        answerBox[i].style.display = 'none';
+        startButton.style.display = 'block';
+      }
+    }
+  }, 1000);
+}
+
+function startGame() {
+  score = 0;
+  currentQuestion = 0;
+  startButton.style.display = 'none';
+  getHighScore();
+  timer();
+  inputQuestions();
+};
 
 
